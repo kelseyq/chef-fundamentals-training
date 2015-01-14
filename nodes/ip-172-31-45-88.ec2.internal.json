@@ -5,6 +5,11 @@
 
     ]
   },
+  "default": {
+    "apache": {
+      "greeting": "chicken butt"
+    }
+  },
   "automatic": {
     "languages": {
       "ruby": {
@@ -52,25 +57,13 @@
       "machine": "x86_64",
       "os": "GNU/Linux",
       "modules": {
+        "veth": {
+          "size": "5040",
+          "refcount": "0"
+        },
         "ipt_addrtype": {
           "size": "2153",
-          "refcount": "2"
-        },
-        "xt_conntrack": {
-          "size": "2776",
-          "refcount": "1"
-        },
-        "ipt_MASQUERADE": {
-          "size": "2466",
-          "refcount": "1"
-        },
-        "iptable_nat": {
-          "size": "6158",
-          "refcount": "1"
-        },
-        "nf_nat": {
-          "size": "22759",
-          "refcount": "2"
+          "refcount": "0"
         },
         "bridge": {
           "size": "83177",
@@ -86,7 +79,7 @@
         },
         "dm_thin_pool": {
           "size": "39290",
-          "refcount": "1"
+          "refcount": "3"
         },
         "dm_bio_prison": {
           "size": "6346",
@@ -106,23 +99,7 @@
         },
         "ipt_REJECT": {
           "size": "2351",
-          "refcount": "2"
-        },
-        "nf_conntrack_ipv4": {
-          "size": "9506",
-          "refcount": "6"
-        },
-        "nf_defrag_ipv4": {
-          "size": "1483",
-          "refcount": "1"
-        },
-        "iptable_filter": {
-          "size": "2793",
-          "refcount": "1"
-        },
-        "ip_tables": {
-          "size": "17831",
-          "refcount": "2"
+          "refcount": "0"
         },
         "ip6t_REJECT": {
           "size": "4628",
@@ -138,11 +115,11 @@
         },
         "xt_state": {
           "size": "1492",
-          "refcount": "4"
+          "refcount": "2"
         },
         "nf_conntrack": {
           "size": "79758",
-          "refcount": "7"
+          "refcount": "2"
         },
         "ip6table_filter": {
           "size": "2889",
@@ -154,11 +131,11 @@
         },
         "ipv6": {
           "size": "317340",
-          "refcount": "13"
+          "refcount": "69"
         },
         "dm_mod": {
           "size": "84209",
-          "refcount": "5"
+          "refcount": "10"
         },
         "xen_netfront": {
           "size": "19033",
@@ -166,7 +143,7 @@
         },
         "ext4": {
           "size": "374902",
-          "refcount": "1"
+          "refcount": "3"
         },
         "jbd2": {
           "size": "93427",
@@ -193,13 +170,13 @@
     "filesystem": {
       "/dev/xvde": {
         "kb_size": "8256952",
-        "kb_used": "2569012",
-        "kb_available": "5268512",
-        "percent_used": "33%",
+        "kb_used": "3107260",
+        "kb_available": "4730264",
+        "percent_used": "40%",
         "mount": "/",
         "total_inodes": "524288",
-        "inodes_used": "84623",
-        "inodes_available": "439665",
+        "inodes_used": "85301",
+        "inodes_available": "438987",
         "inodes_percent_used": "17%",
         "fs_type": "ext4",
         "mount_options": [
@@ -260,6 +237,14 @@
         "fs_type": "ext4",
         "uuid": "be95631b-e2e7-4c05-8548-80f7d3426c51"
       },
+      "docker-202:64-147590-a7020e9b24f7c0647a489ae10d277e2b6c44d50e8e44f5991e0e39f825314930": {
+        "fs_type": "ext4",
+        "uuid": "be95631b-e2e7-4c05-8548-80f7d3426c51"
+      },
+      "docker-202:64-147590-53c4f902e6a97f8794dc76da924d99d6a35012b23d6c0b5a684ea6126db3457d": {
+        "fs_type": "ext4",
+        "uuid": "be95631b-e2e7-4c05-8548-80f7d3426c51"
+      },
       "xvde": {
         "fs_type": "ext4",
         "uuid": "44d27f92-d3df-4207-80ea-22830afccf03",
@@ -299,6 +284,32 @@
           "rw",
           "relatime",
           "cpuset"
+        ]
+      },
+      "/dev/mapper/docker-202:64-147590-53c4f902e6a97f8794dc76da924d99d6a35012b23d6c0b5a684ea6126db3457d": {
+        "mount": "/var/lib/docker/devicemapper/mnt/53c4f902e6a97f8794dc76da924d99d6a35012b23d6c0b5a684ea6126db3457d",
+        "fs_type": "ext4",
+        "mount_options": [
+          "rw",
+          "seclabel",
+          "relatime",
+          "barrier=1",
+          "stripe=16",
+          "data=ordered",
+          "discard"
+        ]
+      },
+      "/dev/mapper/docker-202:64-147590-a7020e9b24f7c0647a489ae10d277e2b6c44d50e8e44f5991e0e39f825314930": {
+        "mount": "/var/lib/docker/devicemapper/mnt/a7020e9b24f7c0647a489ae10d277e2b6c44d50e8e44f5991e0e39f825314930",
+        "fs_type": "ext4",
+        "mount_options": [
+          "rw",
+          "seclabel",
+          "relatime",
+          "barrier=1",
+          "stripe=16",
+          "data=ordered",
+          "discard"
         ]
       }
     },
@@ -350,10 +361,10 @@
       "total": 1,
       "real": 0
     },
-    "uptime_seconds": 26956,
-    "uptime": "7 hours 29 minutes 16 seconds",
-    "idletime_seconds": 53039,
-    "idletime": "14 hours 43 minutes 59 seconds",
+    "uptime_seconds": 112915,
+    "uptime": "1 day 07 hours 21 minutes 55 seconds",
+    "idletime_seconds": 222746,
+    "idletime": "2 days 13 hours 52 minutes 26 seconds",
     "memory": {
       "swap": {
         "cached": "0kB",
@@ -361,26 +372,26 @@
         "free": "0kB"
       },
       "total": "1695028kB",
-      "free": "1096244kB",
-      "buffers": "118180kB",
-      "cached": "266556kB",
-      "active": "262112kB",
-      "inactive": "223504kB",
-      "dirty": "36kB",
+      "free": "156492kB",
+      "buffers": "178508kB",
+      "cached": "1046332kB",
+      "active": "614416kB",
+      "inactive": "730260kB",
+      "dirty": "28kB",
       "writeback": "0kB",
-      "anon_pages": "100936kB",
-      "mapped": "15852kB",
-      "slab": "81576kB",
-      "slab_reclaimable": "33676kB",
-      "slab_unreclaim": "47900kB",
-      "page_tables": "2912kB",
+      "anon_pages": "119700kB",
+      "mapped": "26176kB",
+      "slab": "153980kB",
+      "slab_reclaimable": "98844kB",
+      "slab_unreclaim": "55136kB",
+      "page_tables": "10072kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "847512kB",
-      "committed_as": "247936kB",
+      "committed_as": "522248kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "17324kB",
-      "vmalloc_chunk": "34359711492kB"
+      "vmalloc_used": "17500kB",
+      "vmalloc_chunk": "34359710040kB"
     },
     "network": {
       "interfaces": {
@@ -525,7 +536,7 @@
           ],
           "encapsulation": "Ethernet",
           "addresses": {
-            "76:AB:78:5C:D3:CD": {
+            "FE:22:93:95:B3:11": {
               "family": "lladdr"
             },
             "172.17.42.1": {
@@ -556,6 +567,68 @@
               "proto": "kernel"
             }
           ]
+        },
+        "vethML5VQT": {
+          "type": "vethML",
+          "number": "5VQT",
+          "mtu": "1500",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "encapsulation": "Ethernet",
+          "addresses": {
+            "FE:DA:A0:53:9B:F2": {
+              "family": "lladdr"
+            },
+            "fe80::fcda:a0ff:fe53:9bf2": {
+              "family": "inet6",
+              "prefixlen": "64",
+              "scope": "Link"
+            }
+          },
+          "state": "up",
+          "routes": [
+            {
+              "destination": "fe80::/64",
+              "family": "inet6",
+              "metric": "256",
+              "proto": "kernel"
+            }
+          ]
+        },
+        "veth48PXRC": {
+          "type": "veth4",
+          "number": "8PXRC",
+          "mtu": "1500",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "encapsulation": "Ethernet",
+          "addresses": {
+            "FE:22:93:95:B3:11": {
+              "family": "lladdr"
+            },
+            "fe80::fc22:93ff:fe95:b311": {
+              "family": "inet6",
+              "prefixlen": "64",
+              "scope": "Link"
+            }
+          },
+          "state": "up",
+          "routes": [
+            {
+              "destination": "fe80::/64",
+              "family": "inet6",
+              "metric": "256",
+              "proto": "kernel"
+            }
+          ]
         }
       },
       "default_interface": "eth0",
@@ -566,15 +639,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "257285",
-              "packets": "406",
+              "bytes": "1870770",
+              "packets": "5660",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "257285",
-              "packets": "406",
+              "bytes": "1870770",
+              "packets": "5660",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -584,16 +657,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "2682863",
-              "packets": "22014",
+              "bytes": "11170378",
+              "packets": "76862",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "36205198",
-              "packets": "41578",
+              "bytes": "208165718",
+              "packets": "187117",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -601,19 +674,55 @@
           },
           "docker0": {
             "rx": {
-              "bytes": "0",
-              "packets": "0",
+              "bytes": "1246600",
+              "packets": "21007",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "368",
-              "packets": "4",
+              "bytes": "160186611",
+              "packets": "109471",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
+            }
+          },
+          "vethML5VQT": {
+            "tx": {
+              "queuelen": "1000",
+              "bytes": "42613364",
+              "packets": "28493",
+              "errors": "0",
+              "drop": "0",
+              "carrier": "0",
+              "collisions": "0"
+            },
+            "rx": {
+              "bytes": "167812",
+              "packets": "2559",
+              "errors": "0",
+              "drop": "0",
+              "overrun": "0"
+            }
+          },
+          "veth48PXRC": {
+            "tx": {
+              "queuelen": "1000",
+              "bytes": "65789115",
+              "packets": "46141",
+              "errors": "0",
+              "drop": "0",
+              "carrier": "0",
+              "collisions": "0"
+            },
+            "rx": {
+              "bytes": "1049117",
+              "packets": "13497",
+              "errors": "0",
+              "drop": "0",
+              "overrun": "0"
             }
           }
         }
@@ -743,9 +852,17 @@
       "dm-0": {
         "size": "209715200",
         "removable": "0"
+      },
+      "dm-1": {
+        "size": "20971520",
+        "removable": "0"
+      },
+      "dm-2": {
+        "size": "20971520",
+        "removable": "0"
       }
     },
-    "ohai_time": 1421185609.253549,
+    "ohai_time": 1421271568.218669,
     "cloud_v2": null,
     "root_group": "root",
     "etc": {
@@ -896,6 +1013,13 @@
           "uid": 38,
           "shell": "/sbin/nologin",
           "gecos": ""
+        },
+        "apache": {
+          "dir": "/var/www",
+          "gid": 48,
+          "uid": 48,
+          "shell": "/sbin/nologin",
+          "gecos": "Apache"
         }
       },
       "group": {
@@ -1131,6 +1255,12 @@
           "members": [
 
           ]
+        },
+        "apache": {
+          "gid": 48,
+          "members": [
+
+          ]
         }
       }
     },
@@ -1150,14 +1280,14 @@
     "fqdn": "ip-172-31-45-88.ec2.internal",
     "domain": "ec2.internal",
     "recipes": [
-      "ntp",
-      "ntp::default"
+      "apache",
+      "apache::default"
     ],
     "roles": [
 
     ]
   },
   "run_list": [
-    "recipe[ntp]"
+    "recipe[apache]"
   ]
 }

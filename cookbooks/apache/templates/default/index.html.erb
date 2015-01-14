@@ -3,6 +3,15 @@
     <title>YOOOOOO</title>
   </head>
   <body>
-    <h1>sup</h1>
+    <h1>sup, <%= node["apache"]["greeting"] %></h1>
+
+    <p>
+      hi i'm a <%= node["platform"] %> <%= node["platform_version"] %>!
+      i have <%= node["memory"]["total"] %> RAM!
+      i know how to  <% for @lang in node["languages"] %>
+      <%= @lang[0] %>,
+      <% end %> and more!
+
+    <p>
   </body>
 </html>

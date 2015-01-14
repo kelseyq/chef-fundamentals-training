@@ -30,6 +30,8 @@ describe 'apache' do
 
   it "returns the correct page via HTTP" do
     expect(command("curl http://localhost").stdout).to match /sup/i
+    expect(command("curl http://localhost").stdout).to contain(node["platform"])
+    expect(command("curl http://localhost").stdout).to contain(node["apache"]["greeting"])
   end
 
 end

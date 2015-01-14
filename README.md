@@ -1,3 +1,5 @@
+homework and labs from 1/15 Chef fundamentals training
+
 Overview
 ========
 
